@@ -1,0 +1,29 @@
+<body>
+  <h1>Pipeline status</h1>
+  {{> info}}
+  {{> pipelines}}
+</body>
+
+<template name="info">
+  <ul>
+    <li><a href="https://gitlab.com/" target="_blank">GitLab Link</a></li>
+  </ul>
+</template>
+
+
+<template name="pipelines">
+  <ul>
+      {{#each git_methods}}
+      <li>
+        <br>
+        project: {{project.name}}
+        <br>
+        branch: {{ref}}
+        <br>
+        status: {{status}}
+        <br>
+        id: {{id}}
+      </li>
+      {{/each}}
+  </ul>
+</template>
